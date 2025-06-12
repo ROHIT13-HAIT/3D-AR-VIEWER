@@ -128,8 +128,10 @@
   .toggle-btn.collapsed {
     left: 0;
   }
-  
+
   /* Cards */
+
+  
   .card {
     background: white;
     border: 1px solid #e2e8f0;
@@ -575,7 +577,39 @@
     color: #64748b;
   }
 
-
+  .viewer-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9fafb;
+    overflow: hidden;
+  }
+  
+  .viewer-placeholder {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  
+  model-viewer {
+    width: 100%;
+    height: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+  }
+   
   
   /* Footer */
   .footer {
@@ -614,6 +648,15 @@
       max-height: none;
       overflow-y: visible;
     }
+    .right-panel {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 1rem;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-top: 1px solid #e5e7eb;
+      }
   
     .main-content {
       flex-direction: column;
@@ -624,20 +667,23 @@
   
     .viewer-container {
       width: 100%;
-      height: auto;
-      overflow: visible;
+      height: 400px; /* ✅ force height on mobile */
+      min-height: 300px;
+      overflow: hidden;
     }
   
-    .right-panel {
+    model-viewer {
       width: 100%;
-      max-width: 100%;
-      height: auto;
-      overflow: visible;
+      height: 100% !important;
+      max-height: 100%;
+      display: block !important;
+      object-fit: contain;
     }
   
     .toggle-btn {
       display: none;
     }
   }
+  
   
   
